@@ -1,0 +1,33 @@
+{
+  "name": "@unravelling/prettier-config",
+  "version": "1.0.0",
+  "description": "A Prettier configuration based off Unravelling's JavaScript style guide",
+  "author": "Tiago Veiga Lázaro",
+  "main": "index.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unravellingtechnologies/prettier-unravelling-config.git"
+  },
+  "keywords": [
+    "prettier",
+    "unravelling",
+    "config"
+  ],
+  "bugs": {
+    "url": "https://github.com/unravellingtechnologies/prettier-unravelling-config/issues"
+  },
+  "homepage": "https://github.com/unravellingtechnologies/prettier-unravelling-config#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "node -e \"JSON.parse(require('fs').readFileSync('index.json', 'utf8'))\""
+  },
+  "peerDependencies": {
+    "prettier": "^3.5.0"
+  },
+  "packageManager": "pnpm@10.10.0"
+}

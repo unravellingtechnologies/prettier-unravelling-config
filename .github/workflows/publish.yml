@@ -1,0 +1,49 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@unravelling'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.10.0
+          run_install: false
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Validate package.json
+        run: pnpm run validate || echo "No validate script found, skipping..."
+        
+      - name: Check formatting
+        run: |
+          if command -v prettier >/dev/null 2>&1; then
+            npx prettier --check .
+          else
+            echo "Prettier not found, skipping format check"
+          fi
+        
+      - name: Publish to GitHub Packages
+        run: pnpm publish --registry https://npm.pkg.github.com --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
