@@ -1,23 +1,23 @@
-# @unravelling/prettier-config
+# @unravellingtechnologies/prettier-config
 
 **A Prettier configuration based off Unravelling's JavaScript style guide**
 
 ## Installation
 
 ```bash
-npm install prettier @unravelling/prettier-config --save-dev
+npm install prettier @unravellingtechnologies/prettier-config --save-dev
 ```
 
 or with pnpm:
 
 ```bash
-pnpm add prettier @unravelling/prettier-config -D
+pnpm add prettier @unravellingtechnologies/prettier-config -D
 ```
 
 or with yarn:
 
 ```bash
-yarn add prettier @unravelling/prettier-config --dev
+yarn add prettier @unravellingtechnologies/prettier-config --dev
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Add the prettier configuration to your `package.json`:
 {
   "name": "my-project",
   "version": "1.0.0",
-  "prettier": "@unravelling/prettier-config"
+  "prettier": "@unravellingtechnologies/prettier-config"
 }
 ```
 
@@ -39,7 +39,7 @@ Add the prettier configuration to your `package.json`:
 If you don't want to use your `package.json`, you can create a `.prettierrc.json` file in your project's root directory:
 
 ```json
-"@unravelling/prettier-config"
+"@unravellingtechnologies/prettier-config"
 ```
 
 ### Extending the configuration
@@ -48,7 +48,7 @@ If you would like to extend or modify these properties, create a `.prettierrc.js
 
 ```javascript
 module.exports = {
-  ...require("@unravelling/prettier-config"),
+  ...require('@unravellingtechnologies/prettier-config'),
   printWidth: 120,
   // Add your custom overrides here
 };

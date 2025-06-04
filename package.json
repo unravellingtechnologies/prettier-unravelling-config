@@ -1,5 +1,5 @@
 {
-  "name": "@unravelling/prettier-config",
+  "name": "@unravellingtechnologies/prettier-config",
   "version": "1.0.0",
   "description": "A Prettier configuration based off Unravelling's JavaScript style guide",
   "author": "Tiago Veiga Lázaro",
