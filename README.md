@@ -48,7 +48,7 @@ If you would like to extend or modify these properties, create a `.prettierrc.js
 
 ```javascript
 module.exports = {
-  ...require('@unravelling/prettier-config'),
+  ...require("@unravelling/prettier-config"),
   printWidth: 120,
   // Add your custom overrides here
 };
@@ -61,6 +61,7 @@ This configuration includes the following Prettier settings:
 ### Code Style
 
 #### Single Quotes
+
 > Use single quotes instead of double quotes for strings.
 
 ```json
@@ -68,15 +69,17 @@ This configuration includes the following Prettier settings:
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good
-const greeting = 'Hello, world!';
+const greeting = "Hello, world!";
 
 // ❌ Bad
 const greeting = "Hello, world!";
 ```
 
 #### Semicolons
+
 > Do not use semicolons at the end of statements.
 
 ```json
@@ -84,19 +87,21 @@ const greeting = "Hello, world!";
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good
-const name = 'John'
-const age = 25
+const name = "John";
+const age = 25;
 
 // ❌ Bad
-const name = 'John';
+const name = "John";
 const age = 25;
 ```
 
 ### Indentation and Spacing
 
 #### Use Tabs
+
 > Use tab characters for indentation instead of spaces.
 
 ```json
@@ -105,17 +110,19 @@ const age = 25;
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good (using tabs)
 function example() {
-	return {
-		name: 'test',
-		value: 42
-	}
+  return {
+    name: "test",
+    value: 42,
+  };
 }
 ```
 
 #### Bracket Spacing
+
 > Print spaces between brackets in object literals.
 
 ```json
@@ -123,17 +130,19 @@ function example() {
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good
-const obj = { name: 'John', age: 30 }
+const obj = { name: "John", age: 30 };
 
 // ❌ Bad
-const obj = {name: 'John', age: 30}
+const obj = { name: "John", age: 30 };
 ```
 
 ### Line Length and Wrapping
 
 #### Print Width
+
 > Specify the line length that the printer will wrap on (180 characters).
 
 ```json
@@ -143,6 +152,7 @@ const obj = {name: 'John', age: 30}
 This allows for longer lines before Prettier wraps them, accommodating wider screens and reducing unnecessary line breaks.
 
 ### Trailing Commas
+
 > Add trailing commas wherever possible in ES5 (arrays, objects, parameters, etc.).
 
 ```json
@@ -150,24 +160,26 @@ This allows for longer lines before Prettier wraps them, accommodating wider scr
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good
 const array = [
-	'first',
-	'second',
-	'third', // trailing comma
-]
+  "first",
+  "second",
+  "third", // trailing comma
+];
 
 const obj = {
-	name: 'John',
-	age: 30,
-	city: 'New York', // trailing comma
-}
+  name: "John",
+  age: 30,
+  city: "New York", // trailing comma
+};
 ```
 
 ### Object Properties
 
 #### Quote Props
+
 > Only quote object properties when necessary (when they're invalid identifiers).
 
 ```json
@@ -175,21 +187,22 @@ const obj = {
 ```
 
 **Example:**
+
 ```javascript
 // ✅ Good
 const obj = {
-	name: 'John',
-	age: 30,
-	'invalid-key': 'value', // quotes needed due to hyphen
-	'2nd-item': 'another value' // quotes needed due to number prefix
-}
+  name: "John",
+  age: 30,
+  "invalid-key": "value", // quotes needed due to hyphen
+  "2nd-item": "another value", // quotes needed due to number prefix
+};
 
 // ❌ Bad
 const obj = {
-	'name': 'John',
-	'age': 30,
-	'invalid-key': 'value'
-}
+  name: "John",
+  age: 30,
+  "invalid-key": "value",
+};
 ```
 
 ## Editor Integration
@@ -230,4 +243,4 @@ MIT
 
 ## Contributing
 
-Issues and pull requests are welcome on [GitHub](https://github.com/unravellingtechnologies/prettier-unravelling-config). 
+Issues and pull requests are welcome on [GitHub](https://github.com/unravellingtechnologies/prettier-unravelling-config).
